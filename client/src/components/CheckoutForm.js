@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useForm } from "../hooks/useForm";
 
 const initialValue = {
   firstName: "",
@@ -15,15 +16,30 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, setValues] = useState(initialValue);
+  // const [values, setValues] = useState(initialValue);
+  const [values, handleChanges, clearForm, handleSubmit] = useForm(
+    {
+      name: "",
+      scientificName: ""
+    },
+    "plant-form",
+    () => {
+      alert(`${values.name}: ${values.scientificName}`);
+    },
+    ["name"]
+  );
 
-  const handleChanges = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  // const handleChanges = (e) => {
+  //   setValues({ ...values, [e.target.name]: e.target.value });
+  // };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setShowSuccessMessage(true);
+  // };
+  const handleClearForm = e => {
     e.preventDefault();
-    setShowSuccessMessage(true);
+    clearForm();
   };
 
   return (
