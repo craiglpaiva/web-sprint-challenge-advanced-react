@@ -29,14 +29,27 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+  1. Create a class component
+  2. Create a second component for props.
+  3. Render the return inside of the component.
 
 2. Describe the different phases of the component lifecycle.
+  1. Render Phase: This phase is pure with no side effects
+  2. Pre-Commit Phase: This phase can read the DOM.
+  3. Commit Phase: This phase works with the DOM and can use side effects.
 
 3. Demonstrate an understanding of class component lifecycle methods.
+  1. Mounting
+  2. Updatine
+  3. Unmounting
 
 4. Define stateful logic.
+  Stateful logic was designed to remember previous events and/or interactions. Therefore staeful logic built inside of a component 
+  can handle events and toggle the state, or it can be a funmction that formats data befor it is displayed.
 
 5. Describe how to test a React component with React Testing Library.
+  Arrange, Act, and Assert
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
